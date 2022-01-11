@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app';
 
+import { wrapper } from 'modules/store';
+
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import GlobalStyles from 'styles/globalStyles';
@@ -13,4 +15,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
